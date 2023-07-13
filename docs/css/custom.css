@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+label.radio-btn::before {
+    content: "○ ";
+}
+
+input[type="radio"]:checked + label.radio-btn::before {
+    content: "◉ ";
+}

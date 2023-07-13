@@ -1,0 +1,215 @@
+<p class="fs-2" id="name"></p>
+<p class="fs-4" id="relation"></p>
+<p class="fs-3">総合健康度&nbsp;<span id="r-10"></span>&nbsp;<span id="v-10"></span></p>
+
+<table class="table">
+  <tr><td>I 入脱会の自由に対する侵害</td><td id="r-01"></td><td id="v-01"></td></tr>
+  <tr><td>II 信教・思想の自由に対する侵害</td><td id="r-02"></td><td id="v-02"></td></tr>
+  <tr><td>III 通信・居住の自由に対する侵害</td><td id="r-03"></td><td id="v-03"></td></tr>
+  <tr><td>IV 性・子どもの権利に対する侵害</td><td id="r-04"></td><td id="v-04"></td></tr>
+  <tr><td>V 健康・文化的生活の権利に対する侵害</td><td id="r-05"></td><td id="v-05"></td></tr>
+  <tr><td>VI 民主教育に対する侵害</td><td id="r-06"></td><td id="v-06"></td></tr>
+  <tr><td>VII 組織の民主制に対する侵害</td><td id="r-07"></td><td id="v-07"></td></tr>
+  <tr><td>VIII プライバシーに対する侵害</td><td id="r-08"></td><td id="v-08"></td></tr>
+  <tr><td>IX その他の人権に対する侵害</td><td id="r-09"></td><td id="v-09"></td></tr>
+</table>
+<p><a class="btn btn-primary" href="./">記録を消して最初に戻る</a></p>
+
+<script>
+const answers = [
+    ['name', 'favorite', 'relation', 'gender', 'age'],
+    ['q001', 'q002', 'q003', 'q004', 'q005', 'q006', 'q007', 'q008', 'q009', 'q010', 'q011', 'q012', 'q013', 'q014', 'q015'],
+    ['q016', 'q017', 'q018', 'q019', 'q020', 'q021', 'q022', 'q023', 'q024', 'q025'],
+    ['q026', 'q027', 'q028', 'q029', 'q030', 'q031', 'q032'],
+    ['q033', 'q034', 'q035', 'q036', 'q037', 'q038', 'q039', 'q040', 'q041', 'q042'],
+    ['q043', 'q044', 'q045', 'q046', 'q047', 'q048', 'q049', 'q050', 'q051', 'q052', 'q053', 'q054', 'q055', 'q056', 'q057', 'q058', 'q059', 'q060'],
+    ['q061', 'q062', 'q063', 'q064', 'q065', 'q066', 'q067', 'q068', 'q069', 'q070'],
+    ['q071', 'q072', 'q073', 'q074', 'q075', 'q076', 'q077', 'q078', 'q079', 'q080', 'q081', 'q082', 'q083', 'q084', 'q085', 'q086', 'q087'],
+    ['q088', 'q089', 'q090', 'q091', 'q092', 'q093'],
+    ['q094', 'q095', 'q096', 'q097', 'q098', 'q099', 'q100', 'q101', 'q102', 'q103', 'q104', 'q105', 'q106', 'q107', 'q108', 'q109', 'q110', 'q111', 'q112', 'q113', 'q114']
+];
+
+let indicator = [];
+indicator[0] = 0;
+for (let i = 1; i < answers.length; i++) {
+    let value = 0;
+    for (let j = 0; j < answers[i].length; j++) {
+        let v = sessionStorage.getItem(answers[i][j]);
+        if (v) {
+            value += parseInt(v);
+        }
+    }
+    indicator[i] = value;
+}
+
+let favorite = parseInt(sessionStorage.getItem('favorite'));
+switch (favorite) {
+    case 0:
+        indicator[1] += 5;
+        indicator[2] += 3;
+        indicator[3] += 2;
+        indicator[4] += 3;
+        indicator[5] += 6;
+        indicator[6] += 3;
+        indicator[7] += 6;
+        indicator[8] += 2;
+        indicator[9] += 7;
+        break;
+    case 2:
+        indicator[1] -= 5;
+        indicator[2] -= 3;
+        indicator[3] -= 2;
+        indicator[4] -= 3;
+        indicator[5] -= 6;
+        indicator[6] -= 3;
+        indicator[7] -= 6;
+        indicator[8] -= 2;
+        indicator[9] -= 7;
+        break;
+}
+
+indicator[10] = 0;
+for (let i = 1; i < answers.length; i++) {
+    indicator[10] += indicator[i];
+}
+
+let rate = '';
+rate = 'ふつう';
+if (indicator[1] > 15) {
+    rate = 'やや不健康';
+} else if (indicator[1] > 22) {
+    rate = '不健康';
+} else if (indicator[1] > 30) {
+    rate = '非常に不健康';
+}
+$('#r-01').html(rate);
+$('#v-01').html(indicator[1] + '点');
+
+rate = 'ふつう';
+if (indicator[2] > 10) {
+    rate = 'やや不健康';
+} else if (indicator[2] > 15) {
+    rate = '不健康';
+} else if (indicator[2] > 20) {
+    rate = '非常に不健康';
+}
+$('#r-02').html(rate);
+$('#v-02').html(indicator[2] + '点');
+
+rate = 'ふつう';
+if (indicator[3] > 7) {
+    rate = 'やや不健康';
+} else if (indicator[3] > 11) {
+    rate = '不健康';
+} else if (indicator[3] > 14) {
+    rate = '非常に不健康';
+}
+$('#r-03').html(rate);
+$('#v-03').html(indicator[3] + '点');
+
+rate = 'ふつう';
+if (indicator[4] > 10) {
+    rate = 'やや不健康';
+} else if (indicator[4] > 15) {
+    rate = '不健康';
+} else if (indicator[4] > 20) {
+    rate = '非常に不健康';
+}
+$('#r-04').html(rate);
+$('#v-04').html(indicator[4] + '点');
+
+rate = 'ふつう';
+if (indicator[5] > 18) {
+    rate = 'やや不健康';
+} else if (indicator[5] > 27) {
+    rate = '不健康';
+} else if (indicator[5] > 35) {
+    rate = '非常に不健康';
+}
+$('#r-05').html(rate);
+$('#v-05').html(indicator[5] + '点');
+
+rate = 'ふつう';
+if (indicator[6] > 10) {
+    rate = 'やや不健康';
+} else if (indicator[6] > 15) {
+    rate = '不健康';
+} else if (indicator[6] > 20) {
+    rate = '非常に不健康';
+}
+$('#r-06').html(rate);
+$('#v-06').html(indicator[6] + '点');
+
+rate = 'ふつう';
+if (indicator[7] > 17) {
+    rate = 'やや不健康';
+} else if (indicator[7] > 26) {
+    rate = '不健康';
+} else if (indicator[7] > 34) {
+    rate = '非常に不健康';
+}
+$('#r-07').html(rate);
+$('#v-07').html(indicator[7] + '点');
+
+rate = 'ふつう';
+if (indicator[8] > 6) {
+    rate = 'やや不健康';
+} else if (indicator[8] > 10) {
+    rate = '不健康';
+} else if (indicator[8] > 12) {
+    rate = '非常に不健康';
+}
+$('#r-08').html(rate);
+$('#v-08').html(indicator[8] + '点');
+
+rate = 'ふつう';
+if (indicator[9] > 17) {
+    rate = 'やや不健康';
+} else if (indicator[9] > 26) {
+    rate = '不健康';
+} else if (indicator[9] > 34) {
+    rate = '非常に不健康';
+}
+$('#r-09').html(rate);
+$('#v-09').html(indicator[9] + '点');
+
+rate = 'ふつう';
+if (indicator[10] > 50) {
+    rate = 'やや不健康';
+} else if (indicator[10] > 79) {
+    rate = '不健康';
+} else if (indicator[10] > 109) {
+    rate = '非常に不健康';
+}
+$('#r-10').html(rate);
+$('#v-10').html(indicator[10] + '点');
+
+$('#name').html(sessionStorage.getItem('name'));
+
+$('#relation').html(
+(function () {
+let favorite = parseInt(sessionStorage.getItem('relation'));
+if (favorite === 0) {
+    return '現役メンバー';
+} else if (favorite === 1) {
+    return '元メンバー';
+} else if (favorite === 2) {
+    return 'メンバーの家族';
+} else if (favorite === 3) {
+    return 'メンバーの知人';
+} else if (favorite === 4) {
+    return 'メンバーのその他';
+}})()
++ '(' +
+(function () {
+let favorite = parseInt(sessionStorage.getItem('favorite'));
+if (favorite === 0) {
+    return '好意的';
+} else if (favorite === 1) {
+    return 'ふつう';
+} else if (favorite === 2) {
+    return '否定的';
+}})()
++ ')' 
+);
+</script>

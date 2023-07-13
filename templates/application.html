@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }}</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/custom.css" rel="stylesheet">
+    <script src="./js/jquery-3.7.0.min.js"></script>
+    <link rel="shortcut icon" href="./favicon.ico">
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="./android-chrome-256x256.png">
+  </head>
+  <body>
+
+{% include "templates/_modal.html" %}
+
+{% include "templates/_header.html" %}
+
+    <main class="mt-4 pt-5 pb-5" style="margin-bottom: 70px;">
+      <div class="container">
+        <h1>{{ name }}</h1>
+        <p class="fs-4">{{ header }}</p>
+        {% if type == 'verbatim' %}
+          {% include "templates/_verbatim.html" %}
+        {% elif type == 'index' %}
+          {% include "templates/_index.html" %}
+        {% elif type == 'result' %}
+          {% include "templates/_result.html" %}
+        {% elif type == 'text' %}
+          {% include "templates/_text.html" %}
+        {% elif type == 'number' %}
+          {% include "templates/_number.html" %}
+        {% elif type == 'radio' %}
+          {% include "templates/_radio.html" %}
+        {% endif %}
+      </div>
+    </main>
+
+{% include "templates/_footer.html" %}
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

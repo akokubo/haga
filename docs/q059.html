@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>問059 | 集団健康度チェック</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/custom.css" rel="stylesheet">
+    <script src="./js/jquery-3.7.0.min.js"></script>
+    <link rel="shortcut icon" href="./favicon.ico">
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="./android-chrome-256x256.png">
+  </head>
+  <body>
+
+    <!-- 集団健康度チェックについて -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="aboutModalLabel">集団健康度チェックについて</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>集団健康度チェックは、西田公昭らによって開発されました。</p>
+            <p>詳しくは、日本脱カルト協会(JSCPR)編『カルトからの脱会と回復のための手引き（改訂版）』、遠見書房、2014年の付録1「集団健康度測定目録」をご覧ください。</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 日本脱カルト協会 -->
+    <div class="modal fade" id="jscprModal" tabindex="-1" aria-labelledby="jscprModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="jscprModalLabel">日本脱カルト協会</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>日本脱カルト協会(JSCPR)については、日本脱カルト協会のWebサイトをご覧ください。</p>
+            <p>日本脱カルト協会のWebサイトは <a href="http://www.jscpr.org/">http://www.jscpr.org/</a> です。<br>
+            ※このリンクをクリックすると集団健康度チェックを中断し、日本脱カルト協会のWebサイトに移動します。</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- お問い合わせ -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="contactModalLabel">お問い合わせ</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>日本脱カルト協会(JSCPR)へのお問い合わせは、メールもしくはFAXでお願いいたします。</p>
+            <p>メール: info★jscpr.org<br>※★を＠（アットマーク）に変更してください。</p>
+            <p>FAX: 03-5539-4879</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- プライバシー・ポリシー -->
+    <div class="modal fade" id="privacyPolicyModal" tabindex="-1" aria-labelledby="privacyPolicyModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="privacyPolicyModalLabel">プライバシー・ポリシー</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p></p>
+            <p>集団健康度チェックの回答データは、ご利用のブラウザにブラウザを終了するまでの間、保存されます。ブラウザを終了するとブラウザから削除されます。</p>
+            <p>チェック終了後にデータをGoogleフォームに送信するボタンが表示されます。このボタンを押した場合に限り、Googleフォームにデータが送信されます。</p>
+            <p>Googleフォームにデータを送信すると、Googleフォームにデータが入った状態で表示されます。ここで「送信」ボタンを押すと、Googleフォームにデータが保存されます。</p>
+            <p>Googleフォームに保存されたデータは日本脱カルト協会が管理しています。</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./">集団健康度チェック</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./">ホーム</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#aboutModal">集団健康度チェックについて</a>
+              </li>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="mt-4 pt-5 pb-5" style="margin-bottom: 70px;">
+      <div class="container">
+        <h1>問059</h1>
+        <p class="fs-4">組織内での自殺者や自殺未遂者は普通より多く出ていると思う。</p>
+        
+            <div class="form-check">
+    
+    <input class="btn-check" type="radio" name="q059" id="q059-0" value="0">
+    <label class="btn btn-outline-primary radio-btn m-1" for="q059-0">あてはまらない</label>
+    
+    <input class="btn-check" type="radio" name="q059" id="q059-1" value="1">
+    <label class="btn btn-outline-primary radio-btn m-1" for="q059-1"> どちらとも言えない</label>
+    
+    <input class="btn-check" type="radio" name="q059" id="q059-2" value="2">
+    <label class="btn btn-outline-primary radio-btn m-1" for="q059-2"> 少しあてはまる</label>
+    
+    <input class="btn-check" type="radio" name="q059" id="q059-3" value="3">
+    <label class="btn btn-outline-primary radio-btn m-1" for="q059-3"> あてはまる</label>
+    
+  </div>
+  <div class="mt-3">
+    <button class="btn btn-primary" id="submit" disabled>次へ</button>
+  </div>
+  <script>
+const name = 'q059';
+
+function restoreSessionStorage(name) {
+  const input = sessionStorage.getItem(name);
+  if (input) {
+    $('input[name="' + name + '"][value="' + input + '"]').prop('checked', true);
+  } else {
+    $('input[name="' + name + '"]:checked').prop('checked', false);
+  }
+}
+
+function activateSubmit(name) {
+  const input = $('input[name="' + name + '"]:checked').val();
+  if (input) {
+    $("#submit").prop("disabled", false);
+  } else {
+    $("#submit").prop("disabled", true);
+  }
+}
+
+function getEntryType(entry) {
+  if (entry.type === "reload") {
+    // console.log(`${entry.name} was reloaded!`);
+    // console.log(entry);
+    // alert("pageshow event fired - reloaded!");
+  }
+  if (entry.type === "navigate") {
+    // console.log(`${entry.name} was navigated!`);
+    // console.log(entry);
+    // alert("pageshow event fired - was navigated!");
+  }
+  if (entry.type === "back_forward") {
+    // console.log(`${entry.name} was back_forwarded!`);
+    // console.log(entry);
+    // alert("pageshow event fired - was back_forwarded!");
+    /*
+    var field = document.getElementById('name');
+    console.log(field);
+    if (field) {
+      var v = sessionStorage.getItem('name');
+      console.log(v);
+      field.value = sessionStorage.getItem('name');
+    }
+    */
+  }
+  if (entry.type === "prerender") {
+    // console.log(`${entry.name} was prerendered!`);
+    // console.log(entry);
+    // alert("pageshow event fired - was prerendered!");
+  }
+}
+
+const entries = performance.getEntriesByType("navigation");
+entries.forEach((entry) => {
+  // console.log(sessionStorage);
+  restoreSessionStorage(name);
+  activateSubmit(name);
+  getEntryType(entry);
+});
+
+  $(document).ready(function () {
+    $(document).on("input", 'input[name="' + name + '"]:checked', function (e) {
+      const input = $(this).val();
+      // console.log('input');
+     // console.log(input);
+      activateSubmit(name);
+    });
+
+    $(document).on("click", "#submit", function (e) {
+      e.preventDefault();
+      const input = $('input[name="' + name + '"]:checked').val();
+      sessionStorage.setItem(name, input);
+      // alert(input + 'saved');
+      location.href = "q060.html";
+    });
+  });
+  </script>
+        
+      </div>
+    </main>
+
+    <footer class="footer pt-3 pb-2 bg-body-secondary fixed-bottom">
+      <div class="container">
+        <p class="float-start">
+          <a href="#" data-bs-toggle="modal" data-bs-target="#jscprModal">日本脱カルト協会(JSCPR)</a>
+        </p>
+        <p class="float-end">
+          <a href="#" data-bs-toggle="modal" data-bs-target="#contactModal">お問い合わせ</a>
+            | <a href="#" data-bs-toggle="modal" data-bs-target="#privacyPolicyModal">プライバシー・ポリシー</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
