@@ -12,10 +12,10 @@ for index, row in df.iterrows():
   record['next'] = row['次のファイル名']
   record['type'] = row['type']
   record['name'] = row['名称']
-  if len(record['name']) > 0:
-    record['title'] = record['name'] + ' | 集団健康度チェック'
+  if record['name'] == '集団健康度チェック':
+    record['full_title'] = record['name']
   else:
-    record['title'] = '集団健康度チェック'
+    record['full_title'] = record['name'] + ' | 集団健康度チェック'
   record['header'] = row['ヘッダー']
   if len(row['選択肢']) > 0:
     record['choices'] = row['選択肢'].split(',')

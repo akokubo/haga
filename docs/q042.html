@@ -13,6 +13,25 @@
   </head>
   <body>
 
+    <!-- ホームへ戻る -->
+    <div class="modal fade" id="homeModal" tabindex="-1" aria-labelledby="homeModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="homeModalLabel">ホームへ戻る</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>集団健康度チェックを中断し、記録を消して最初に戻るには以下をクリックしてください。</p>
+            <p><a class="btn btn-success btn-lg" href="./">記録を消して最初に戻る</a></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- 集団健康度チェックについて -->
     <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -82,9 +101,9 @@
           </div>
           <div class="modal-body">
             <p></p>
-            <p>集団健康度チェックの回答データは、ご利用のブラウザにブラウザを終了するまでの間、保存されます。ブラウザを終了するとブラウザから削除されます。</p>
-            <p>チェック終了後にデータをGoogleフォームに送信するボタンが表示されます。このボタンを押した場合に限り、Googleフォームにデータが送信されます。</p>
-            <p>Googleフォームにデータを送信すると、Googleフォームにデータが入った状態で表示されます。ここで「送信」ボタンを押すと、Googleフォームにデータが保存されます。</p>
+            <p>集団健康度チェックの回答データは、ブラウザに保存されます。ブラウザを終了するか最初のページに戻ると、データがブラウザから削除されます。</p>
+            <p>チェック終了後にデータをGoogleフォームに送信するボタンが表示されます。これはGoogleフォームにデータを送りたい場合にだけご利用ください。</p>
+            <p>このボタンを押すと、Googleフォームが別ウィンドウで開きます。Googleフォームにデータを記入して送信していただくと、Googleフォームにデータが保存されます。</p>
             <p>Googleフォームに保存されたデータは日本脱カルト協会が管理しています。</p>
           </div>
           <div class="modal-footer">
@@ -98,14 +117,14 @@
       <!-- Fixed navbar -->
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="./">集団健康度チェック</a>
+          <a class="navbar-brand" href="#" data-bs-toggle="modal" data-bs-target="#homeModal">集団健康度チェック</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./">ホーム</a>
+                <a class="nav-link active" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#homeModal">ホーム</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#aboutModal">集団健康度チェックについて</a>
@@ -136,7 +155,7 @@
     
   </div>
   <div class="mt-3">
-    <button class="btn btn-primary" id="submit" disabled>次へ</button>
+    <button class="btn btn-success btn-lg" id="submit" disabled>次へ</button>
   </div>
   <script>
 const name = 'q042';
