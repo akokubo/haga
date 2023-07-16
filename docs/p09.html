@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>その他の人権に対する侵害 | 集団健康度チェック</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/custom.css" rel="stylesheet">
+    <script src="./js/jquery-3.7.0.min.js"></script>
+    <link rel="shortcut icon" href="./favicon.ico">
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="./android-chrome-256x256.png">
+  </head>
+  <body>
+
+    <!-- ホームへ戻る -->
+    <div class="modal fade" id="homeModal" tabindex="-1" aria-labelledby="homeModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="homeModalLabel">ホームへ戻る</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>集団健康度チェックを中断し、記録を消して最初に戻るには以下をクリックしてください。</p>
+            <p><a class="btn btn-success btn-lg" href="./">記録を消して最初に戻る</a></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 集団健康度チェックについて -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="aboutModalLabel">集団健康度チェックについて</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>集団健康度チェックは、西田公昭らによって開発されました。</p>
+            <p>詳しくは、日本脱カルト協会(JSCPR)編『カルトからの脱会と回復のための手引き（改訂版）』、遠見書房、2014年の付録1「集団健康度測定目録」をご覧ください。</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 日本脱カルト協会 -->
+    <div class="modal fade" id="jscprModal" tabindex="-1" aria-labelledby="jscprModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="jscprModalLabel">日本脱カルト協会</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>日本脱カルト協会(JSCPR)については、日本脱カルト協会のWebサイトをご覧ください。</p>
+            <p>日本脱カルト協会のWebサイトは <a href="http://www.jscpr.org/">http://www.jscpr.org/</a> です。<br>
+            ※このリンクをクリックすると集団健康度チェックを中断し、日本脱カルト協会のWebサイトに移動します。</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- お問い合わせ -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="contactModalLabel">お問い合わせ</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>日本脱カルト協会(JSCPR)へのお問い合わせは、メールもしくはFAXでお願いいたします。</p>
+            <p>メール: info★jscpr.org<br>※★を＠（アットマーク）に変更してください。</p>
+            <p>FAX: 03-5539-4879</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- プライバシー・ポリシー -->
+    <div class="modal fade" id="privacyPolicyModal" tabindex="-1" aria-labelledby="privacyPolicyModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="privacyPolicyModalLabel">プライバシー・ポリシー</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p></p>
+            <p>集団健康度チェックの回答データは、ブラウザに保存されます。ブラウザを終了するか最初のページに戻ると、データがブラウザから削除されます。</p>
+            <p>チェック終了後にデータをGoogleフォームに送信するボタンが表示されます。これはGoogleフォームにデータを送りたい場合にだけご利用ください。</p>
+            <p>このボタンを押すと、Googleフォームが別ウィンドウで開きます。Googleフォームにデータを記入して送信していただくと、Googleフォームにデータが保存されます。</p>
+            <p>Googleフォームに保存されたデータは日本脱カルト協会が管理しています。</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#" data-bs-toggle="modal" data-bs-target="#homeModal">集団健康度チェック</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#homeModal">ホーム</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#aboutModal">集団健康度チェックについて</a>
+              </li>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="mt-4 pt-5 pb-5" style="margin-bottom: 70px;">
+      <div class="container">
+        <h1>その他の人権に対する侵害</h1>
+        
+        <p class="fs-4"></p>
+        
+          
+<a class="btn btn-success btn-lg" href="q094.html">次へ</a>
+        
+      </div>
+    </main>
+
+<footer class="footer pt-3 pb-2 bg-body-secondary fixed-bottom">
+  <div class="container">
+    <p class="float-start">
+      <a href="#" data-bs-toggle="modal" data-bs-target="#jscprModal" class="fs-7">日本脱カルト協会</a>
+    </p>
+    <p class="float-end">
+      <a href="#" data-bs-toggle="modal" data-bs-target="#contactModal" class="fs-7">お問い合わせ</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#" data-bs-toggle="modal" data-bs-target="#privacyPolicyModal" class="fs-7">プライバシーポリシー</a>
+    </p>
+  </div>
+</footer>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

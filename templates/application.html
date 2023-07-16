@@ -20,6 +20,7 @@
     <main class="mt-4 pt-5 pb-5" style="margin-bottom: 70px;">
       <div class="container">
         <h1>{{ name }}</h1>
+        {% include "templates/_progressbar.html" %}
         <p class="fs-4">{{ header }}</p>
         {% if type == 'verbatim' %}
           {% include "templates/_verbatim.html" %}

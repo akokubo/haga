@@ -137,238 +137,247 @@
     <main class="mt-4 pt-5 pb-5" style="margin-bottom: 70px;">
       <div class="container">
         <h1>結果</h1>
+        
         <p class="fs-4"></p>
         
-          <p class="fs-2" id="name"></p>
-<p class="fs-4" id="relation"></p>
-<p class="fs-3">総合健康度&nbsp;<span id="r-10"></span>&nbsp;<span id="v-10"></span></p>
+          <script src="./js/chart.js"></script>
+<p><span id="relation"></span>(<span id="favorite"></span>)</p>
+<p><span id="gender"></span>(<span id="age"></span>歳)</p>
+<canvas id="hagaChart"></canvas>
 
-<table class="table">
-  <tr><td>I 入脱会の自由に対する侵害</td><td id="r-01"></td><td id="v-01"></td></tr>
-  <tr><td>II 信教・思想の自由に対する侵害</td><td id="r-02"></td><td id="v-02"></td></tr>
-  <tr><td>III 通信・居住の自由に対する侵害</td><td id="r-03"></td><td id="v-03"></td></tr>
-  <tr><td>IV 性・子どもの権利に対する侵害</td><td id="r-04"></td><td id="v-04"></td></tr>
-  <tr><td>V 健康・文化的生活の権利に対する侵害</td><td id="r-05"></td><td id="v-05"></td></tr>
-  <tr><td>VI 民主教育に対する侵害</td><td id="r-06"></td><td id="v-06"></td></tr>
-  <tr><td>VII 組織の民主制に対する侵害</td><td id="r-07"></td><td id="v-07"></td></tr>
-  <tr><td>VIII プライバシーに対する侵害</td><td id="r-08"></td><td id="v-08"></td></tr>
-  <tr><td>IX その他の人権に対する侵害</td><td id="r-09"></td><td id="v-09"></td></tr>
-</table>
+<ol class="list-group list-group-numbered mb-5">
+  <li class="list-group-item"><b>入脱会の自由に対する侵害:</b> <span id="i1"></span>
+    <div class="progress">
+      <div id="p1" style="width: 0%" role="progressbar" aria-label="入脱会の自由に対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
+    </div>
+  </li>
+  <li class="list-group-item"><b>信教・思想の自由に対する侵害:</b> <span id="i2"></span>
+    <div class="progress">
+      <div id="p2" style="width: 0%" role="progressbar" aria-label="信教・思想の自由に対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
+    </div>
+  </li>
+  <li class="list-group-item"><b>通信・居住の自由に対する侵害:</b> <span id="i3"></span>
+    <div class="progress">
+      <div id="p3" style="width: 0%" role="progressbar" aria-label="通信・居住の自由に対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
+    </div>
+  </li>
+  <li class="list-group-item"><b>性・子どもの権利に対する侵害:</b> <span id="i4"></span>
+    <div class="progress">
+      <div id="p4" style="width: 0%" role="progressbar" aria-label="性・子どもの権利に対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
+    </div>
+  </li>
+  <li class="list-group-item"><b>健康・文化的生活の権利に対する侵害:</b> <span id="i5"></span>
+    <div class="progress">
+      <div id="p5" style="width: 0%" role="progressbar" aria-label="健康・文化的生活の権利に対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
+    </div>
+  </li>
+  <li class="list-group-item"><b>民主教育に対する侵害:</b> <span id="i6"></span>
+    <div class="progress">
+      <div id="p6" style="width: 0%" role="progressbar" aria-label="民主教育に対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
+    </div>
+  </li>
+  <li class="list-group-item"><b>組織の民主制に対する侵害:</b> <span id="i7"></span>
+    <div class="progress">
+      <div id="p7" style="width: 0%" role="progressbar" aria-label="組織の民主制に対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
+    </div>
+  </li>
+  <li class="list-group-item"><b>プライバシーに対する侵害:</b> <span id="i8"></span>
+    <div class="progress">
+      <div id="p8" style="width: 0%" role="progressbar" aria-label="プライバシーに対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
+    </div>
+  </li>
+  <li class="list-group-item"><b>その他の人権に対する侵害:</b> <span id="i9"></span>
+    <div class="progress">
+      <div id="p9" style="width: 0%" role="progressbar" aria-label="その他の人権に対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
+    </div>
+  </li>
+  <li class="list-group-item"><b>総合健康度:</b> <span id="i0"></span>
+    <div class="progress">
+      <div id="p0" style="width: 0%" role="progressbar" aria-label="総合健康度" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
+    </div>
+  </li>
+</ol>
+
 <p><a class="btn btn-success btn-lg" href="./">記録を消して最初に戻る</a></p>
 
 <script>
-const answers = [
-    ['name', 'favorite', 'relation', 'gender', 'age'],
-    ['q001', 'q002', 'q003', 'q004', 'q005', 'q006', 'q007', 'q008', 'q009', 'q010', 'q011', 'q012', 'q013', 'q014', 'q015'],
-    ['q016', 'q017', 'q018', 'q019', 'q020', 'q021', 'q022', 'q023', 'q024', 'q025'],
-    ['q026', 'q027', 'q028', 'q029', 'q030', 'q031', 'q032'],
-    ['q033', 'q034', 'q035', 'q036', 'q037', 'q038', 'q039', 'q040', 'q041', 'q042'],
-    ['q043', 'q044', 'q045', 'q046', 'q047', 'q048', 'q049', 'q050', 'q051', 'q052', 'q053', 'q054', 'q055', 'q056', 'q057', 'q058', 'q059', 'q060'],
-    ['q061', 'q062', 'q063', 'q064', 'q065', 'q066', 'q067', 'q068', 'q069', 'q070'],
-    ['q071', 'q072', 'q073', 'q074', 'q075', 'q076', 'q077', 'q078', 'q079', 'q080', 'q081', 'q082', 'q083', 'q084', 'q085', 'q086', 'q087'],
-    ['q088', 'q089', 'q090', 'q091', 'q092', 'q093'],
-    ['q094', 'q095', 'q096', 'q097', 'q098', 'q099', 'q100', 'q101', 'q102', 'q103', 'q104', 'q105', 'q106', 'q107', 'q108', 'q109', 'q110', 'q111', 'q112', 'q113', 'q114']
-];
-
-let indicator = [];
-indicator[0] = 0;
-for (let i = 1; i < answers.length; i++) {
-    let value = 0;
-    for (let j = 0; j < answers[i].length; j++) {
-        let v = sessionStorage.getItem(answers[i][j]);
-        if (v) {
-            value += parseInt(v);
-        }
+    function getRelation(relation) {
+      const matrix = ['現役メンバー', '元メンバー', 'メンバーの家族', 'メンバーの知人', 'その他'];
+      return matrix[relation];
     }
-    indicator[i] = value;
-}
-
-let favorite = parseInt(sessionStorage.getItem('favorite'));
-switch (favorite) {
-    case 0:
-        indicator[1] += 5;
-        indicator[2] += 3;
-        indicator[3] += 2;
-        indicator[4] += 3;
-        indicator[5] += 6;
-        indicator[6] += 3;
-        indicator[7] += 6;
-        indicator[8] += 2;
-        indicator[9] += 7;
-        break;
-    case 2:
-        indicator[1] -= 5;
-        indicator[2] -= 3;
-        indicator[3] -= 2;
-        indicator[4] -= 3;
-        indicator[5] -= 6;
-        indicator[6] -= 3;
-        indicator[7] -= 6;
-        indicator[8] -= 2;
-        indicator[9] -= 7;
-        break;
-}
-
-indicator[10] = 0;
-for (let i = 1; i < answers.length; i++) {
-    indicator[10] += indicator[i];
-}
-
-let rate = '';
-rate = 'ふつう';
-if (indicator[1] > 15) {
-    rate = 'やや不健康';
-} else if (indicator[1] > 22) {
-    rate = '不健康';
-} else if (indicator[1] > 30) {
-    rate = '非常に不健康';
-}
-$('#r-01').html(rate);
-$('#v-01').html(indicator[1] + '点');
-
-rate = 'ふつう';
-if (indicator[2] > 10) {
-    rate = 'やや不健康';
-} else if (indicator[2] > 15) {
-    rate = '不健康';
-} else if (indicator[2] > 20) {
-    rate = '非常に不健康';
-}
-$('#r-02').html(rate);
-$('#v-02').html(indicator[2] + '点');
-
-rate = 'ふつう';
-if (indicator[3] > 7) {
-    rate = 'やや不健康';
-} else if (indicator[3] > 11) {
-    rate = '不健康';
-} else if (indicator[3] > 14) {
-    rate = '非常に不健康';
-}
-$('#r-03').html(rate);
-$('#v-03').html(indicator[3] + '点');
-
-rate = 'ふつう';
-if (indicator[4] > 10) {
-    rate = 'やや不健康';
-} else if (indicator[4] > 15) {
-    rate = '不健康';
-} else if (indicator[4] > 20) {
-    rate = '非常に不健康';
-}
-$('#r-04').html(rate);
-$('#v-04').html(indicator[4] + '点');
-
-rate = 'ふつう';
-if (indicator[5] > 18) {
-    rate = 'やや不健康';
-} else if (indicator[5] > 27) {
-    rate = '不健康';
-} else if (indicator[5] > 35) {
-    rate = '非常に不健康';
-}
-$('#r-05').html(rate);
-$('#v-05').html(indicator[5] + '点');
-
-rate = 'ふつう';
-if (indicator[6] > 10) {
-    rate = 'やや不健康';
-} else if (indicator[6] > 15) {
-    rate = '不健康';
-} else if (indicator[6] > 20) {
-    rate = '非常に不健康';
-}
-$('#r-06').html(rate);
-$('#v-06').html(indicator[6] + '点');
-
-rate = 'ふつう';
-if (indicator[7] > 17) {
-    rate = 'やや不健康';
-} else if (indicator[7] > 26) {
-    rate = '不健康';
-} else if (indicator[7] > 34) {
-    rate = '非常に不健康';
-}
-$('#r-07').html(rate);
-$('#v-07').html(indicator[7] + '点');
-
-rate = 'ふつう';
-if (indicator[8] > 6) {
-    rate = 'やや不健康';
-} else if (indicator[8] > 10) {
-    rate = '不健康';
-} else if (indicator[8] > 12) {
-    rate = '非常に不健康';
-}
-$('#r-08').html(rate);
-$('#v-08').html(indicator[8] + '点');
-
-rate = 'ふつう';
-if (indicator[9] > 17) {
-    rate = 'やや不健康';
-} else if (indicator[9] > 26) {
-    rate = '不健康';
-} else if (indicator[9] > 34) {
-    rate = '非常に不健康';
-}
-$('#r-09').html(rate);
-$('#v-09').html(indicator[9] + '点');
-
-rate = 'ふつう';
-if (indicator[10] > 50) {
-    rate = 'やや不健康';
-} else if (indicator[10] > 79) {
-    rate = '不健康';
-} else if (indicator[10] > 109) {
-    rate = '非常に不健康';
-}
-$('#r-10').html(rate);
-$('#v-10').html(indicator[10] + '点');
-
-$('#name').html(sessionStorage.getItem('name'));
-
-$('#relation').html(
-(function () {
-let favorite = parseInt(sessionStorage.getItem('relation'));
-if (favorite === 0) {
-    return '現役メンバー';
-} else if (favorite === 1) {
-    return '元メンバー';
-} else if (favorite === 2) {
-    return 'メンバーの家族';
-} else if (favorite === 3) {
-    return 'メンバーの知人';
-} else if (favorite === 4) {
-    return 'メンバーのその他';
-}})()
-+ '(' +
-(function () {
-let favorite = parseInt(sessionStorage.getItem('favorite'));
-if (favorite === 0) {
-    return '好意的';
-} else if (favorite === 1) {
-    return 'ふつう';
-} else if (favorite === 2) {
-    return '否定的';
-}})()
-+ ')' 
-);
-</script>
+    function getFavorite(favorite) {
+      const matrix = ['好意的', 'どちらでもない', '否定的'];
+      return matrix[favorite];
+    }
+    function getGender(gender) {
+      const matrix = ['男性', '女性'];
+      return matrix[gender];
+    }
+    $('h1').html(sessionStorage.getItem('name'));
+    $('#relation').html(getRelation(sessionStorage.getItem('relation')));
+    $('#favorite').html(getFavorite(sessionStorage.getItem('favorite')));
+    $('#gender').html(getGender(sessionStorage.getItem('gender')));
+    $('#age').html(sessionStorage.getItem('age'));
+    
+    const answers = [
+        ['name', 'favorite', 'relation', 'gender', 'age'],
+        ['q001', 'q002', 'q003', 'q004', 'q005', 'q006', 'q007', 'q008', 'q009', 'q010', 'q011', 'q012', 'q013', 'q014', 'q015'],
+        ['q016', 'q017', 'q018', 'q019', 'q020', 'q021', 'q022', 'q023', 'q024', 'q025'],
+        ['q026', 'q027', 'q028', 'q029', 'q030', 'q031', 'q032'],
+        ['q033', 'q034', 'q035', 'q036', 'q037', 'q038', 'q039', 'q040', 'q041', 'q042'],
+        ['q043', 'q044', 'q045', 'q046', 'q047', 'q048', 'q049', 'q050', 'q051', 'q052', 'q053', 'q054', 'q055', 'q056', 'q057', 'q058', 'q059', 'q060'],
+        ['q061', 'q062', 'q063', 'q064', 'q065', 'q066', 'q067', 'q068', 'q069', 'q070'],
+        ['q071', 'q072', 'q073', 'q074', 'q075', 'q076', 'q077', 'q078', 'q079', 'q080', 'q081', 'q082', 'q083', 'q084', 'q085', 'q086', 'q087'],
+        ['q088', 'q089', 'q090', 'q091', 'q092', 'q093'],
+        ['q094', 'q095', 'q096', 'q097', 'q098', 'q099', 'q100', 'q101', 'q102', 'q103', 'q104', 'q105', 'q106', 'q107', 'q108', 'q109', 'q110', 'q111', 'q112', 'q113', 'q114']
+    ];
+    
+    let indicator = [];
+    indicator[0] = 0;
+    for (let i = 1; i < answers.length; i++) {
+        indicator[i] = 0;
+        for (let j = 0; j < answers[i].length; j++) {
+            let value = sessionStorage.getItem(answers[i][j]);
+            if (value) {
+                indicator[i] += parseInt(value);
+            } else {
+                indicator[i] += 0;
+            }
+        }
+        indicator[0] += indicator[i];
+    }
+    
+    // 得点を調整
+    let favorite = parseInt(sessionStorage.getItem('favorite'));
+    let regulation = [ 37, 5, 3, 2, 3, 6, 3, 6, 2, 7 ];
+    for (let i = 0; i < regulation.length; i++) {
+      if (favorite === 0) {
+        indicator[i] += regulation[i];
+      } else if (favorite === 2) {
+        indicator[i] -= regulation[i];
+      }
+    }
+    
+    // スコア
+    let scores = [
+      { 'check': 50, 'warning': 79, 'danger': 109, 'max': 379 },
+      { 'check': 15, 'warning': 22, 'danger': 30,  'max': 50  },
+      { 'check': 10, 'warning': 15, 'danger': 20,  'max': 33  },
+      { 'check': 7,  'warning': 11, 'danger': 14,  'max': 23  },
+      { 'check': 10, 'warning': 15, 'danger': 20,  'max': 33  },
+      { 'check': 18, 'warning': 27, 'danger': 35,  'max': 60  },
+      { 'check': 10, 'warning': 15, 'danger': 20,  'max': 33  },
+      { 'check': 17, 'warning': 26, 'danger': 34,  'max': 57  },
+      { 'check': 6,  'warning': 10, 'danger': 12,  'max': 20  },
+      { 'check': 17, 'warning': 26, 'danger': 34,  'max': 70  }
+    ];
+    
+    for (let i = 0; i < indicator.length; i++) {
+      evaluation = 'ふつう';
+      color = 'bg-primary';
+      if (indicator[i] > scores[i]['danger']) {
+        evaluation = '非常に不健康';
+        color = 'bg-danger';
+      } else if (indicator[i] > scores[i]['warning']) {
+        evaluation = '不健康';
+        color = 'bg-warning';
+      } else if (indicator[i] > scores[i]['check']) {
+        evaluation = 'やや不健康';
+        color = 'bg-success';
+      }
+    
+      let pv = Math.round(indicator[i] / scores[i]['max'] * 100);
+      $("#i" + i).html(evaluation + '&nbsp;' + indicator[i] + '点');
+      $("#p" + i).attr('valuenow', pv);
+      $("#p" + i).addClass(color);
+      $("#p" + i).css('width', pv + '%');
+    }
+    
+    var ctx = document.getElementById("hagaChart");
+    var myChart = new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: ["入脱会", "信教・思想", "通信・居住", "性・子ども", "健康・文化的生活", "民主教育", "組織の民主制", "プライバシー", "その他"],
+            //データ設定
+            datasets: [
+                {
+                    //グラフのデータ(上から時計回り)
+                    data: [
+                      Math.round(indicator[1] / scores[1]['max'] * 100),
+                      Math.round(indicator[2] / scores[2]['max'] * 100),
+                      Math.round(indicator[3] / scores[3]['max'] * 100),
+                      Math.round(indicator[4] / scores[4]['max'] * 100),
+                      Math.round(indicator[5] / scores[5]['max'] * 100),
+                      Math.round(indicator[6] / scores[6]['max'] * 100),
+                      Math.round(indicator[7] / scores[7]['max'] * 100),
+                      Math.round(indicator[8] / scores[8]['max'] * 100),
+                      Math.round(indicator[9] / scores[9]['max'] * 100),
+                    ],
+                    //グラフ全体のラベル
+                    label: "侵害",
+                    //背景色
+                    backgroundColor: "rgba(0, 0, 0, 0)",
+                    //線の終端を四角にするか丸めるかの設定。デフォルトは四角(butt)。
+                    borderCapStyle: "butt",
+                    //線の色
+                    borderColor: "rgba(255, 0, 0, 1)",
+                    //線を破線にする
+                    borderDash: [],
+                    //破線のオフセット(基準点からの距離)
+                    borderDashOffset: 0.0,
+                    //線と線が交わる箇所のスタイル。初期値は'miter'
+                    borderJoinStyle: 'miter',
+                    //線の幅。ピクセル単位で指定。初期値は3。
+                    borderWidth: 3,
+                    //グラフを塗りつぶすかどうか。初期値はtrue。falseにすると枠線だけのグラフになります。
+                    fill: false,
+                    //複数のグラフを重ねて描画する際の重なりを設定する。z-indexみたいなもの。初期値は0。
+                    order: 0,
+                    //0より大きい値にすると「ベジェ曲線」という数式で曲線のグラフになります。初期値は0。
+                    lineTension: 0
+                }
+            ]
+        },
+        options: {
+        scales: {
+          r: {
+            //グラフの最小値・最大値
+            min: 0,
+            max: 100,
+            //背景色
+            backgroundColor: 'snow',
+            //グリッドライン
+            grid: {
+              color: 'pink',
+            },
+            //アングルライン
+            angleLines: {
+              color: 'green',
+            },
+            //各項目のラベル
+            pointLabels: {
+              color: 'black',
+            },
+          },
+        },
+      }
+    });
+    
+    </script>
         
       </div>
     </main>
 
-    <footer class="footer pt-3 pb-2 bg-body-secondary fixed-bottom">
-      <div class="container">
-        <p class="float-start">
-          <a href="#" data-bs-toggle="modal" data-bs-target="#jscprModal">日本脱カルト協会(JSCPR)</a>
-        </p>
-        <p class="float-end">
-          <a href="#" data-bs-toggle="modal" data-bs-target="#contactModal">お問い合わせ</a>
-            | <a href="#" data-bs-toggle="modal" data-bs-target="#privacyPolicyModal">プライバシー・ポリシー</a>
-        </p>
-      </div>
-    </footer>
+<footer class="footer pt-3 pb-2 bg-body-secondary fixed-bottom">
+  <div class="container">
+    <p class="float-start">
+      <a href="#" data-bs-toggle="modal" data-bs-target="#jscprModal" class="fs-7">日本脱カルト協会</a>
+    </p>
+    <p class="float-end">
+      <a href="#" data-bs-toggle="modal" data-bs-target="#contactModal" class="fs-7">お問い合わせ</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#" data-bs-toggle="modal" data-bs-target="#privacyPolicyModal" class="fs-7">プライバシーポリシー</a>
+    </p>
+  </div>
+</footer>
 
     <script src="./js/bootstrap.bundle.min.js"></script>
   </body>
