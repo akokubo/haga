@@ -141,62 +141,248 @@
         <p class="fs-4"></p>
         
           <script src="./js/chart.js"></script>
-<p><span id="relation"></span>(<span id="favorite"></span>)</p>
-<p><span id="gender"></span>(<span id="age"></span>歳)</p>
+
+<p><span class="relation"></span>(<span class="favorite"></span>)&nbsp;<span class="gender"></span>(<span class="age"></span>歳)</p>
+<h3>総合健康度: <span class="evaluation-0"></span>&nbsp;<span class="indicator-0"></span></h3>
 <canvas id="hagaChart"></canvas>
 
+<h2>リスト形式の表示</h2>
 <ol class="list-group list-group-numbered mb-5">
-  <li class="list-group-item"><b>入脱会の自由に対する侵害:</b> <span id="i1"></span>
+  <li class="list-group-item"><b>入脱会の自由に対する侵害:</b> <span class="evaluation-1"></span>&nbsp;<span class="indicator-1"></span>
     <div class="progress">
-      <div id="p1" style="width: 0%" role="progressbar" aria-label="入脱会の自由に対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
+      <div class="progress-value-1" style="width: 0%" role="progressbar" aria-label="入脱会の自由に対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
     </div>
   </li>
-  <li class="list-group-item"><b>信教・思想の自由に対する侵害:</b> <span id="i2"></span>
+  <li class="list-group-item"><b>信教・思想の自由に対する侵害:</b> <span class="evaluation-2"></span>&nbsp;<span class="indicator-2"></span>
     <div class="progress">
-      <div id="p2" style="width: 0%" role="progressbar" aria-label="信教・思想の自由に対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
+      <div class="progress-value-2" style="width: 0%" role="progressbar" aria-label="信教・思想の自由に対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
     </div>
   </li>
-  <li class="list-group-item"><b>通信・居住の自由に対する侵害:</b> <span id="i3"></span>
+  <li class="list-group-item"><b>通信・居住の自由に対する侵害:</b> <span class="evaluation-3"></span>&nbsp;<span class="indicator-3"></span>
     <div class="progress">
-      <div id="p3" style="width: 0%" role="progressbar" aria-label="通信・居住の自由に対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
+      <div class="progress-value-3" style="width: 0%" role="progressbar" aria-label="通信・居住の自由に対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
     </div>
   </li>
-  <li class="list-group-item"><b>性・子どもの権利に対する侵害:</b> <span id="i4"></span>
+  <li class="list-group-item"><b>性・子どもの権利に対する侵害:</b> <span class="evaluation-4"></span>&nbsp;<span class="indicator-4"></span>
     <div class="progress">
-      <div id="p4" style="width: 0%" role="progressbar" aria-label="性・子どもの権利に対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
+      <div class="progress-value-4" style="width: 0%" role="progressbar" aria-label="性・子どもの権利に対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
     </div>
   </li>
-  <li class="list-group-item"><b>健康・文化的生活の権利に対する侵害:</b> <span id="i5"></span>
+  <li class="list-group-item"><b>健康・文化的生活の権利に対する侵害:</b> <span class="evaluation-5"></span>&nbsp;<span class="indicator-5"></span>
     <div class="progress">
-      <div id="p5" style="width: 0%" role="progressbar" aria-label="健康・文化的生活の権利に対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
+      <div class="progress-value-5" style="width: 0%" role="progressbar" aria-label="健康・文化的生活の権利に対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
     </div>
   </li>
-  <li class="list-group-item"><b>民主教育に対する侵害:</b> <span id="i6"></span>
+  <li class="list-group-item"><b>民主教育に対する侵害:</b> <span class="evaluation-6"></span>&nbsp;<span class="indicator-6"></span>
     <div class="progress">
-      <div id="p6" style="width: 0%" role="progressbar" aria-label="民主教育に対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
+      <div class="progress-value-6" style="width: 0%" role="progressbar" aria-label="民主教育に対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
     </div>
   </li>
-  <li class="list-group-item"><b>組織の民主制に対する侵害:</b> <span id="i7"></span>
+  <li class="list-group-item"><b>組織の民主制に対する侵害:</b> <span class="evaluation-7"></span>&nbsp;<span class="indicator-7"></span>
     <div class="progress">
-      <div id="p7" style="width: 0%" role="progressbar" aria-label="組織の民主制に対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
+      <div class="progress-value-7" style="width: 0%" role="progressbar" aria-label="組織の民主制に対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
     </div>
   </li>
-  <li class="list-group-item"><b>プライバシーに対する侵害:</b> <span id="i8"></span>
+  <li class="list-group-item"><b>プライバシーに対する侵害:</b> <span class="evaluation-8"></span>&nbsp;<span class="indicator-8"></span>
     <div class="progress">
-      <div id="p8" style="width: 0%" role="progressbar" aria-label="プライバシーに対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
+      <div class="progress-value-8" style="width: 0%" role="progressbar" aria-label="プライバシーに対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
     </div>
   </li>
-  <li class="list-group-item"><b>その他の人権に対する侵害:</b> <span id="i9"></span>
+  <li class="list-group-item"><b>その他の人権に対する侵害:</b> <span class="evaluation-9"></span>&nbsp;<span class="indicator-9"></span>
     <div class="progress">
-      <div id="p9" style="width: 0%" role="progressbar" aria-label="その他の人権に対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
+      <div class="progress-value-9" style="width: 0%" role="progressbar" aria-label="その他の人権に対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
     </div>
   </li>
-  <li class="list-group-item"><b>総合健康度:</b> <span id="i0"></span>
+  <li class="list-group-item"><b>総合健康度:</b> <span class="evaluation-0"></span>&nbsp;<span class="indicator-0"></span>
     <div class="progress">
-      <div id="p0" style="width: 0%" role="progressbar" aria-label="総合健康度" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
+      <div class="progress-value-0" style="width: 0%" role="progressbar" aria-label="総合健康度" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
     </div>
   </li>
 </ol>
+
+<h2>表形式の表示</h2>
+<table class="table mb-5">
+  <tr>
+    <th>
+      1.入脱会の自由に対する侵害
+    </th>
+    <td>
+      <span class="evaluation-1"></span>
+    </td>
+    <td>
+      <span class="indicator-1"></span>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <div class="progress">
+        <div class="progress-value-1" style="width: 0%" role="progressbar" aria-label="入脱会の自由に対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      2.信教・思想の自由に対する侵害
+    </th>
+    <td>
+      <span class="evaluation-2"></span>
+    </td>
+    <td>
+      <span class="indicator-2"></span>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <div class="progress">
+        <div class="progress-value-2" style="width: 0%" role="progressbar" aria-label="信教・思想の自由に対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      3.通信・居住の自由に対する侵害
+    </th>
+    <td>
+      <span class="evaluation-3"></span>
+    </td>
+    <td>
+      <span class="indicator-3"></span>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <div class="progress">
+        <div class="progress-value-3" style="width: 0%" role="progressbar" aria-label="通信・居住の自由に対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      4.性・子どもの権利に対する侵害
+    </th>
+    <td>
+      <span class="evaluation-4"></span>
+    </td>
+    <td>
+      <span class="indicator-4"></span>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <div class="progress">
+        <div class="progress-value-4" style="width: 0%" role="progressbar" aria-label="性・子どもの権利に対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      5.健康・文化的生活の権利に対する侵害
+    </th>
+    <td>
+      <span class="evaluation-5"></span>
+    </td>
+    <td>
+      <span class="indicator-5"></span>
+    </td>
+  </td>
+  <tr>
+    <td colspan="3">
+      <div class="progress">
+        <div class="progress-value-5" style="width: 0%" role="progressbar" aria-label="健康・文化的生活の権利に対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      6.民主教育に対する侵害
+    </th>
+    <td>
+      <span class="evaluation-6"></span>
+    </td>
+    <td>
+      <span class="indicator-6"></span>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <div class="progress">
+        <div class="progress-value-6" style="width: 0%" role="progressbar" aria-label="民主教育に対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      7.組織の民主制に対する侵害
+    </th>
+    <td>
+      <span class="evaluation-7"></span>
+    </td>
+    <td>
+      <span class="indicator-7"></span>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <div class="progress">
+        <div class="progress-value-7" style="width: 0%" role="progressbar" aria-label="組織の民主制に対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      8.プライバシーに対する侵害
+    </th>
+    <td>
+      <span class="evaluation-8"></span>
+    </td>
+    <td>
+      <span class="indicator-8"></span>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <div class="progress">
+        <div class="progress-value-8" style="width: 0%" role="progressbar" aria-label="プライバシーに対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      9.その他の人権に対する侵害
+    </th>
+    <td>
+      <span class="evaluation-9"></span>
+    </td>
+    <td>
+      <span class="indicator-9"></span>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <div class="progress">
+        <div class="progress-value-9" style="width: 0%" role="progressbar" aria-label="その他の人権に対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      10.総合健康度
+    </th>
+    <td>
+      <span class="evaluation-0"></span>
+    </td>
+    <td>
+      <span class="indicator-0"></span>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <div class="progress">
+        <div class="progress-value-0" style="width: 0%" role="progressbar" aria-label="総合健康度" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
+      </div>
+    </td>
+  </tr>
+</table>
 
 <p><a class="btn btn-success btn-lg" href="./">記録を消して最初に戻る</a></p>
 
@@ -213,11 +399,12 @@
       const matrix = ['男性', '女性'];
       return matrix[gender];
     }
+
     $('h1').html(sessionStorage.getItem('name'));
-    $('#relation').html(getRelation(sessionStorage.getItem('relation')));
-    $('#favorite').html(getFavorite(sessionStorage.getItem('favorite')));
-    $('#gender').html(getGender(sessionStorage.getItem('gender')));
-    $('#age').html(sessionStorage.getItem('age'));
+    $('.relation').html(getRelation(sessionStorage.getItem('relation')));
+    $('.favorite').html(getFavorite(sessionStorage.getItem('favorite')));
+    $('.gender').html(getGender(sessionStorage.getItem('gender')));
+    $('.age').html(sessionStorage.getItem('age'));
     
     const answers = [
         ['name', 'favorite', 'relation', 'gender', 'age'],
@@ -260,16 +447,16 @@
     
     // スコア
     let scores = [
-      { 'check': 50, 'warning': 79, 'danger': 109, 'max': 379 },
-      { 'check': 15, 'warning': 22, 'danger': 30,  'max': 50  },
-      { 'check': 10, 'warning': 15, 'danger': 20,  'max': 33  },
-      { 'check': 7,  'warning': 11, 'danger': 14,  'max': 23  },
-      { 'check': 10, 'warning': 15, 'danger': 20,  'max': 33  },
-      { 'check': 18, 'warning': 27, 'danger': 35,  'max': 60  },
-      { 'check': 10, 'warning': 15, 'danger': 20,  'max': 33  },
-      { 'check': 17, 'warning': 26, 'danger': 34,  'max': 57  },
-      { 'check': 6,  'warning': 10, 'danger': 12,  'max': 20  },
-      { 'check': 17, 'warning': 26, 'danger': 34,  'max': 70  }
+      { 'check': 50, 'warning': 79, 'danger': 109, 'max': 342 },
+      { 'check': 15, 'warning': 22, 'danger': 30,  'max': 45  },
+      { 'check': 10, 'warning': 15, 'danger': 20,  'max': 30  },
+      { 'check': 7,  'warning': 11, 'danger': 14,  'max': 21  },
+      { 'check': 10, 'warning': 15, 'danger': 20,  'max': 30  },
+      { 'check': 18, 'warning': 27, 'danger': 35,  'max': 54  },
+      { 'check': 10, 'warning': 15, 'danger': 20,  'max': 30  },
+      { 'check': 17, 'warning': 26, 'danger': 34,  'max': 51  },
+      { 'check': 6,  'warning': 10, 'danger': 12,  'max': 18  },
+      { 'check': 17, 'warning': 26, 'danger': 34,  'max': 63  }
     ];
     
     for (let i = 0; i < indicator.length; i++) {
@@ -287,10 +474,11 @@
       }
     
       let pv = Math.round(indicator[i] / scores[i]['max'] * 100);
-      $("#i" + i).html(evaluation + '&nbsp;' + indicator[i] + '点');
-      $("#p" + i).attr('valuenow', pv);
-      $("#p" + i).addClass(color);
-      $("#p" + i).css('width', pv + '%');
+      $(".evaluation-" + i).html(evaluation);
+      $(".indicator-" + i).html(indicator[i] + '点');
+      $(".progress-value-" + i).attr('valuenow', pv);
+      $(".progress-value-" + i).addClass(color);
+      $(".progress-value-" + i).css('width', pv + '%');
     }
     
     var ctx = document.getElementById("hagaChart");
@@ -300,6 +488,118 @@
             labels: ["入脱会", "信教・思想", "通信・居住", "性・子ども", "健康・文化的生活", "民主教育", "組織の民主制", "プライバシー", "その他"],
             //データ設定
             datasets: [
+            {
+                    //グラフのデータ(上から時計回り)
+                    data: [
+                      100, 100, 100, 100, 100, 100, 100, 100, 100
+                    ],
+                    //グラフ全体のラベル
+                    label: '非常に不健康',
+                    //背景色
+                    backgroundColor: "rgba(255, 0, 0, 0.03)",
+                    //線の終端を四角にするか丸めるかの設定。デフォルトは四角(butt)。
+                    //borderCapStyle: "butt",
+                    //線の色
+                    borderColor: "rgba(255, 0, 0, 0.03)",
+                    //線を破線にする
+                    //borderDash: [],
+                    //破線のオフセット(基準点からの距離)
+                    //borderDashOffset: 0.0,
+                    //線と線が交わる箇所のスタイル。初期値は'miter'
+                    //borderJoinStyle: 'miter',
+                    //線の幅。ピクセル単位で指定。初期値は3。
+                    //borderWidth: 3,
+                    //グラフを塗りつぶすかどうか。初期値はtrue。falseにすると枠線だけのグラフになります。
+                    fill: true,
+                    //複数のグラフを重ねて描画する際の重なりを設定する。z-indexみたいなもの。初期値は0。
+                    order: 40,
+                    //0より大きい値にすると「ベジェ曲線」という数式で曲線のグラフになります。初期値は0。
+                    lineTension: 0
+                },
+            {
+                    //グラフのデータ(上から時計回り)
+                    data: [
+                      69, 70, 71, 70, 67, 70, 69, 72, 56
+                    ],
+                    //グラフ全体のラベル
+                    label: '不健康',
+                    //背景色
+                    backgroundColor: "rgba(255, 255, 0, 0.1)",
+                    //線の終端を四角にするか丸めるかの設定。デフォルトは四角(butt)。
+                    //borderCapStyle: "butt",
+                    //線の色
+                    borderColor: "rgba(255, 255, 0, 0.1)",
+                    //線を破線にする
+                    //borderDash: [],
+                    //破線のオフセット(基準点からの距離)
+                    //borderDashOffset: 0.0,
+                    //線と線が交わる箇所のスタイル。初期値は'miter'
+                    //borderJoinStyle: 'miter',
+                    //線の幅。ピクセル単位で指定。初期値は3。
+                    //borderWidth: 3,
+                    //グラフを塗りつぶすかどうか。初期値はtrue。falseにすると枠線だけのグラフになります。
+                    fill: true,
+                    //複数のグラフを重ねて描画する際の重なりを設定する。z-indexみたいなもの。初期値は0。
+                    order: 30,
+                    //0より大きい値にすると「ベジェ曲線」という数式で曲線のグラフになります。初期値は0。
+                    lineTension: 0
+                },
+                {
+                    //グラフのデータ(上から時計回り)
+                    data: [
+                      51, 53, 57, 53, 52, 53, 53, 61, 43
+                    ],
+                    //グラフ全体のラベル
+                    label: 'やや不健康',
+                    //背景色
+                    backgroundColor: "rgba(0, 255, 0, 0.2)",
+                    //線の終端を四角にするか丸めるかの設定。デフォルトは四角(butt)。
+                    //borderCapStyle: "butt",
+                    //線の色
+                    borderColor: "rgba(0, 255, 0, 0.2)",
+                    //線を破線にする
+                    //borderDash: [],
+                    //破線のオフセット(基準点からの距離)
+                    //borderDashOffset: 0.0,
+                    //線と線が交わる箇所のスタイル。初期値は'miter'
+                    //borderJoinStyle: 'miter',
+                    //線の幅。ピクセル単位で指定。初期値は3。
+                    borderWidth: 3,
+                    //グラフを塗りつぶすかどうか。初期値はtrue。falseにすると枠線だけのグラフになります。
+                    fill: true,
+                    //複数のグラフを重ねて描画する際の重なりを設定する。z-indexみたいなもの。初期値は0。
+                    order: 20,
+                    //0より大きい値にすると「ベジェ曲線」という数式で曲線のグラフになります。初期値は0。
+                    lineTension: 0
+                },
+                {
+                    //グラフのデータ(上から時計回り)
+                    data: [
+                      36, 37, 38, 37, 35, 37, 36, 39, 29
+                    ],
+                    //グラフ全体のラベル
+                    label: 'ふつう',
+                    //背景色
+                    backgroundColor: "rgba(0, 0, 255, 0.2)",
+                    //線の終端を四角にするか丸めるかの設定。デフォルトは四角(butt)。
+                    //borderCapStyle: "butt",
+                    //線の色
+                    borderColor: "rgba(0, 0, 255, 0.2)",
+                    //線を破線にする
+                    //borderDash: [],
+                    //破線のオフセット(基準点からの距離)
+                    //borderDashOffset: 0.0,
+                    //線と線が交わる箇所のスタイル。初期値は'miter'
+                    //borderJoinStyle: 'miter',
+                    //線の幅。ピクセル単位で指定。初期値は3。
+                    borderWidth: 3,
+                    //グラフを塗りつぶすかどうか。初期値はtrue。falseにすると枠線だけのグラフになります。
+                    fill: true,
+                    //複数のグラフを重ねて描画する際の重なりを設定する。z-indexみたいなもの。初期値は0。
+                    order: 10,
+                    //0より大きい値にすると「ベジェ曲線」という数式で曲線のグラフになります。初期値は0。
+                    lineTension: 0
+                },
                 {
                     //グラフのデータ(上から時計回り)
                     data: [
@@ -311,22 +611,22 @@
                       Math.round(indicator[6] / scores[6]['max'] * 100),
                       Math.round(indicator[7] / scores[7]['max'] * 100),
                       Math.round(indicator[8] / scores[8]['max'] * 100),
-                      Math.round(indicator[9] / scores[9]['max'] * 100),
+                      Math.round(indicator[9] / scores[9]['max'] * 100)
                     ],
                     //グラフ全体のラベル
-                    label: "侵害",
+                    label: "回答",
                     //背景色
-                    backgroundColor: "rgba(0, 0, 0, 0)",
+                    backgroundColor: "rgba(0, 0, 0, 1)",
                     //線の終端を四角にするか丸めるかの設定。デフォルトは四角(butt)。
                     borderCapStyle: "butt",
                     //線の色
-                    borderColor: "rgba(255, 0, 0, 1)",
+                    borderColor: "rgba(0, 0, 0, 1)",
                     //線を破線にする
-                    borderDash: [],
+                    //borderDash: [],
                     //破線のオフセット(基準点からの距離)
-                    borderDashOffset: 0.0,
+                    //borderDashOffset: 0.0,
                     //線と線が交わる箇所のスタイル。初期値は'miter'
-                    borderJoinStyle: 'miter',
+                    //borderJoinStyle: 'miter',
                     //線の幅。ピクセル単位で指定。初期値は3。
                     borderWidth: 3,
                     //グラフを塗りつぶすかどうか。初期値はtrue。falseにすると枠線だけのグラフになります。
@@ -345,10 +645,10 @@
             min: 0,
             max: 100,
             //背景色
-            backgroundColor: 'snow',
+            backgroundColor: 'white',
             //グリッドライン
             grid: {
-              color: 'pink',
+              color: 'grey',
             },
             //アングルライン
             angleLines: {
@@ -357,13 +657,12 @@
             //各項目のラベル
             pointLabels: {
               color: 'black',
-            },
-          },
-        },
+            }
+          }
+        }
       }
     });
-    
-    </script>
+</script>
         
       </div>
     </main>
