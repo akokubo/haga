@@ -113,26 +113,26 @@
       </div>
     </div>
 
-    <header>
-      <!-- Fixed navbar -->
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#" data-bs-toggle="modal" data-bs-target="#homeModal">集団健康度チェック</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav me-auto mb-2 mb-md-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#homeModal">ホーム</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#aboutModal">集団健康度チェックについて</a>
-              </li>
-          </div>
-        </div>
-      </nav>
-    </header>
+<header>
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" data-bs-toggle="modal" data-bs-target="#homeModal">集団健康度チェック</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#homeModal">ホーム</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#aboutModal">集団健康度チェックについて</a>
+          </li>
+      </div>
+    </div>
+  </nav>
+</header>
 
     <main class="mt-4 pt-5 pb-5" style="margin-bottom: 70px;">
       <div class="container">
@@ -144,102 +144,28 @@
 
         <p class="fs-4">反抗的なメンバーには、辛い体罰や独房への幽閉などの身体的罰を受けさせる。</p>
         
-            <div class="form-check">
-    
-    <input class="btn-check" type="radio" name="q001" id="q001-0" value="0">
-    <label class="btn btn-outline-primary radio-btn m-1" for="q001-0">あてはまらない</label>
-    
-    <input class="btn-check" type="radio" name="q001" id="q001-1" value="1">
-    <label class="btn btn-outline-primary radio-btn m-1" for="q001-1"> どちらとも言えない</label>
-    
-    <input class="btn-check" type="radio" name="q001" id="q001-2" value="2">
-    <label class="btn btn-outline-primary radio-btn m-1" for="q001-2"> 少しあてはまる</label>
-    
-    <input class="btn-check" type="radio" name="q001" id="q001-3" value="3">
-    <label class="btn btn-outline-primary radio-btn m-1" for="q001-3"> あてはまる</label>
-    
-  </div>
-  <div class="mt-3">
-    <button class="btn btn-success btn-lg" id="submit" disabled>次へ</button>
-  </div>
-  <script>
-const name = 'q001';
+          <div class="form-check">
+  
+  <input class="btn-check" type="radio" name="q001" id="q001-0" value="0">
+  <label class="btn btn-outline-primary radio-btn m-1" for="q001-0">あてはまらない</label>
+  
+  <input class="btn-check" type="radio" name="q001" id="q001-1" value="1">
+  <label class="btn btn-outline-primary radio-btn m-1" for="q001-1"> どちらとも言えない</label>
+  
+  <input class="btn-check" type="radio" name="q001" id="q001-2" value="2">
+  <label class="btn btn-outline-primary radio-btn m-1" for="q001-2"> 少しあてはまる</label>
+  
+  <input class="btn-check" type="radio" name="q001" id="q001-3" value="3">
+  <label class="btn btn-outline-primary radio-btn m-1" for="q001-3"> あてはまる</label>
+  
+</div>
+<div class="mt-3">
+  <button class="btn btn-success btn-lg" id="submit" disabled>次へ</button>
+</div>
+<script>const nameValue = 'q001';</script>
+<script>const nextValue = 'q002';</script>
 
-function restoreSessionStorage(name) {
-  const input = sessionStorage.getItem(name);
-  if (input) {
-    $('input[name="' + name + '"][value="' + input + '"]').prop('checked', true);
-  } else {
-    $('input[name="' + name + '"]:checked').prop('checked', false);
-  }
-}
-
-function activateSubmit(name) {
-  const input = $('input[name="' + name + '"]:checked').val();
-  if (input) {
-    $("#submit").prop("disabled", false);
-  } else {
-    $("#submit").prop("disabled", true);
-  }
-}
-
-function getEntryType(entry) {
-  if (entry.type === "reload") {
-    // console.log(`${entry.name} was reloaded!`);
-    // console.log(entry);
-    // alert("pageshow event fired - reloaded!");
-  }
-  if (entry.type === "navigate") {
-    // console.log(`${entry.name} was navigated!`);
-    // console.log(entry);
-    // alert("pageshow event fired - was navigated!");
-  }
-  if (entry.type === "back_forward") {
-    // console.log(`${entry.name} was back_forwarded!`);
-    // console.log(entry);
-    // alert("pageshow event fired - was back_forwarded!");
-    /*
-    var field = document.getElementById('name');
-    console.log(field);
-    if (field) {
-      var v = sessionStorage.getItem('name');
-      console.log(v);
-      field.value = sessionStorage.getItem('name');
-    }
-    */
-  }
-  if (entry.type === "prerender") {
-    // console.log(`${entry.name} was prerendered!`);
-    // console.log(entry);
-    // alert("pageshow event fired - was prerendered!");
-  }
-}
-
-const entries = performance.getEntriesByType("navigation");
-entries.forEach((entry) => {
-  // console.log(sessionStorage);
-  restoreSessionStorage(name);
-  activateSubmit(name);
-  getEntryType(entry);
-});
-
-  $(document).ready(function () {
-    $(document).on("input", 'input[name="' + name + '"]:checked', function (e) {
-      const input = $(this).val();
-      // console.log('input');
-     // console.log(input);
-      activateSubmit(name);
-    });
-
-    $(document).on("click", "#submit", function (e) {
-      e.preventDefault();
-      const input = $('input[name="' + name + '"]:checked').val();
-      sessionStorage.setItem(name, input);
-      // alert(input + 'saved');
-      location.href = "q002.html";
-    });
-  });
-  </script>
+<script src="./js/radio.js"></script>
         
       </div>
     </main>

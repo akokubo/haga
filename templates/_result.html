@@ -7,6 +7,30 @@
 <h2>リスト形式の表示</h2>
 <ol class="list-group list-group-numbered mb-5">
   <li class="list-group-item"><b>入脱会の自由に対する侵害:</b> <span class="evaluation-1"></span>&nbsp;<span class="indicator-1"></span>
+  </li>
+  <li class="list-group-item"><b>信教・思想の自由に対する侵害:</b> <span class="evaluation-2"></span>&nbsp;<span class="indicator-2"></span>
+  </li>
+  <li class="list-group-item"><b>通信・居住の自由に対する侵害:</b> <span class="evaluation-3"></span>&nbsp;<span class="indicator-3"></span>
+  </li>
+  <li class="list-group-item"><b>性・子どもの権利に対する侵害:</b> <span class="evaluation-4"></span>&nbsp;<span class="indicator-4"></span>
+  </li>
+  <li class="list-group-item"><b>健康・文化的生活の権利に対する侵害:</b> <span class="evaluation-5"></span>&nbsp;<span class="indicator-5"></span>
+=  </li>
+  <li class="list-group-item"><b>民主教育に対する侵害:</b> <span class="evaluation-6"></span>&nbsp;<span class="indicator-6"></span>
+  </li>
+  <li class="list-group-item"><b>組織の民主制に対する侵害:</b> <span class="evaluation-7"></span>&nbsp;<span class="indicator-7"></span>
+  </li>
+  <li class="list-group-item"><b>プライバシーに対する侵害:</b> <span class="evaluation-8"></span>&nbsp;<span class="indicator-8"></span>
+  </li>
+  <li class="list-group-item"><b>その他の人権に対する侵害:</b> <span class="evaluation-9"></span>&nbsp;<span class="indicator-9"></span>
+  </li>
+  <li class="list-group-item"><b>総合健康度:</b> <span class="evaluation-0"></span>&nbsp;<span class="indicator-0"></span>
+  </li>
+</ol>
+
+<h2>リストとゲージ形式の表示</h2>
+<ol class="list-group list-group-numbered mb-5">
+  <li class="list-group-item"><b>入脱会の自由に対する侵害:</b> <span class="evaluation-1"></span>&nbsp;<span class="indicator-1"></span>
     <div class="progress">
       <div class="progress-value-1" style="width: 0%" role="progressbar" aria-label="入脱会の自由に対する侵害" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
     </div>
@@ -58,7 +82,122 @@
   </li>
 </ol>
 
+
 <h2>表形式の表示</h2>
+<table class="table mb-5">
+  <tr>
+    <th>
+      1.入脱会の自由に対する侵害
+    </th>
+    <td>
+      <span class="evaluation-1"></span>
+    </td>
+    <td>
+      <span class="indicator-1"></span>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      2.信教・思想の自由に対する侵害
+    </th>
+    <td>
+      <span class="evaluation-2"></span>
+    </td>
+    <td>
+      <span class="indicator-2"></span>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      3.通信・居住の自由に対する侵害
+    </th>
+    <td>
+      <span class="evaluation-3"></span>
+    </td>
+    <td>
+      <span class="indicator-3"></span>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      4.性・子どもの権利に対する侵害
+    </th>
+    <td>
+      <span class="evaluation-4"></span>
+    </td>
+    <td>
+      <span class="indicator-4"></span>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      5.健康・文化的生活の権利に対する侵害
+    </th>
+    <td>
+      <span class="evaluation-5"></span>
+    </td>
+    <td>
+      <span class="indicator-5"></span>
+    </td>
+  </td>
+  <tr>
+    <th>
+      6.民主教育に対する侵害
+    </th>
+    <td>
+      <span class="evaluation-6"></span>
+    </td>
+    <td>
+      <span class="indicator-6"></span>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      7.組織の民主制に対する侵害
+    </th>
+    <td>
+      <span class="evaluation-7"></span>
+    </td>
+    <td>
+      <span class="indicator-7"></span>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      8.プライバシーに対する侵害
+    </th>
+    <td>
+      <span class="evaluation-8"></span>
+    </td>
+    <td>
+      <span class="indicator-8"></span>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      9.その他の人権に対する侵害
+    </th>
+    <td>
+      <span class="evaluation-9"></span>
+    </td>
+    <td>
+      <span class="indicator-9"></span>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      10.総合健康度
+    </th>
+    <td>
+      <span class="evaluation-0"></span>
+    </td>
+    <td>
+      <span class="indicator-0"></span>
+    </td>
+  </tr>
+</table>
+
+<h2>表とゲージ形式の表示</h2>
 <table class="table mb-5">
   <tr>
     <th>
@@ -247,280 +386,4 @@
 
 <p><a class="btn btn-success btn-lg" href="./">記録を消して最初に戻る</a></p>
 
-<script>
-    function getRelation(relation) {
-      const matrix = ['現役メンバー', '元メンバー', 'メンバーの家族', 'メンバーの知人', 'その他'];
-      return matrix[relation];
-    }
-    function getFavorite(favorite) {
-      const matrix = ['好意的', 'どちらでもない', '否定的'];
-      return matrix[favorite];
-    }
-    function getGender(gender) {
-      const matrix = ['男性', '女性'];
-      return matrix[gender];
-    }
-
-    $('h1').html(sessionStorage.getItem('name'));
-    $('.relation').html(getRelation(sessionStorage.getItem('relation')));
-    $('.favorite').html(getFavorite(sessionStorage.getItem('favorite')));
-    $('.gender').html(getGender(sessionStorage.getItem('gender')));
-    $('.age').html(sessionStorage.getItem('age'));
-    
-    const answers = [
-        ['name', 'favorite', 'relation', 'gender', 'age'],
-        ['q001', 'q002', 'q003', 'q004', 'q005', 'q006', 'q007', 'q008', 'q009', 'q010', 'q011', 'q012', 'q013', 'q014', 'q015'],
-        ['q016', 'q017', 'q018', 'q019', 'q020', 'q021', 'q022', 'q023', 'q024', 'q025'],
-        ['q026', 'q027', 'q028', 'q029', 'q030', 'q031', 'q032'],
-        ['q033', 'q034', 'q035', 'q036', 'q037', 'q038', 'q039', 'q040', 'q041', 'q042'],
-        ['q043', 'q044', 'q045', 'q046', 'q047', 'q048', 'q049', 'q050', 'q051', 'q052', 'q053', 'q054', 'q055', 'q056', 'q057', 'q058', 'q059', 'q060'],
-        ['q061', 'q062', 'q063', 'q064', 'q065', 'q066', 'q067', 'q068', 'q069', 'q070'],
-        ['q071', 'q072', 'q073', 'q074', 'q075', 'q076', 'q077', 'q078', 'q079', 'q080', 'q081', 'q082', 'q083', 'q084', 'q085', 'q086', 'q087'],
-        ['q088', 'q089', 'q090', 'q091', 'q092', 'q093'],
-        ['q094', 'q095', 'q096', 'q097', 'q098', 'q099', 'q100', 'q101', 'q102', 'q103', 'q104', 'q105', 'q106', 'q107', 'q108', 'q109', 'q110', 'q111', 'q112', 'q113', 'q114']
-    ];
-    
-    let indicator = [];
-    indicator[0] = 0;
-    for (let i = 1; i < answers.length; i++) {
-        indicator[i] = 0;
-        for (let j = 0; j < answers[i].length; j++) {
-            let value = sessionStorage.getItem(answers[i][j]);
-            if (value) {
-                indicator[i] += parseInt(value);
-            } else {
-                indicator[i] += 0;
-            }
-        }
-        indicator[0] += indicator[i];
-    }
-    
-    // 得点を調整
-    let favorite = parseInt(sessionStorage.getItem('favorite'));
-    let regulation = [ 37, 5, 3, 2, 3, 6, 3, 6, 2, 7 ];
-    for (let i = 0; i < regulation.length; i++) {
-      if (favorite === 0) {
-        indicator[i] += regulation[i];
-      } else if (favorite === 2) {
-        indicator[i] -= regulation[i];
-      }
-    }
-    
-    // スコア
-    let scores = [
-      { 'check': 50, 'warning': 79, 'danger': 109, 'max': 342 },
-      { 'check': 15, 'warning': 22, 'danger': 30,  'max': 45  },
-      { 'check': 10, 'warning': 15, 'danger': 20,  'max': 30  },
-      { 'check': 7,  'warning': 11, 'danger': 14,  'max': 21  },
-      { 'check': 10, 'warning': 15, 'danger': 20,  'max': 30  },
-      { 'check': 18, 'warning': 27, 'danger': 35,  'max': 54  },
-      { 'check': 10, 'warning': 15, 'danger': 20,  'max': 30  },
-      { 'check': 17, 'warning': 26, 'danger': 34,  'max': 51  },
-      { 'check': 6,  'warning': 10, 'danger': 12,  'max': 18  },
-      { 'check': 17, 'warning': 26, 'danger': 34,  'max': 63  }
-    ];
-    
-    for (let i = 0; i < indicator.length; i++) {
-      evaluation = 'ふつう';
-      color = 'bg-primary';
-      if (indicator[i] > scores[i]['danger']) {
-        evaluation = '非常に不健康';
-        color = 'bg-danger';
-      } else if (indicator[i] > scores[i]['warning']) {
-        evaluation = '不健康';
-        color = 'bg-warning';
-      } else if (indicator[i] > scores[i]['check']) {
-        evaluation = 'やや不健康';
-        color = 'bg-success';
-      }
-    
-      let pv = Math.round(indicator[i] / scores[i]['max'] * 100);
-      $(".evaluation-" + i).html(evaluation);
-      $(".indicator-" + i).html(indicator[i] + '点');
-      $(".progress-value-" + i).attr('valuenow', pv);
-      $(".progress-value-" + i).addClass(color);
-      $(".progress-value-" + i).css('width', pv + '%');
-    }
-    
-    var ctx = document.getElementById("hagaChart");
-    var myChart = new Chart(ctx, {
-        type: 'radar',
-        data: {
-            labels: ["入脱会", "信教・思想", "通信・居住", "性・子ども", "健康・文化的生活", "民主教育", "組織の民主制", "プライバシー", "その他"],
-            //データ設定
-            datasets: [
-            {
-                    //グラフのデータ(上から時計回り)
-                    data: [
-                      100, 100, 100, 100, 100, 100, 100, 100, 100
-                    ],
-                    //グラフ全体のラベル
-                    label: '非常に不健康',
-                    //背景色
-                    backgroundColor: "rgba(255, 0, 0, 0.03)",
-                    //線の終端を四角にするか丸めるかの設定。デフォルトは四角(butt)。
-                    //borderCapStyle: "butt",
-                    //線の色
-                    borderColor: "rgba(255, 0, 0, 0.03)",
-                    //線を破線にする
-                    //borderDash: [],
-                    //破線のオフセット(基準点からの距離)
-                    //borderDashOffset: 0.0,
-                    //線と線が交わる箇所のスタイル。初期値は'miter'
-                    //borderJoinStyle: 'miter',
-                    //線の幅。ピクセル単位で指定。初期値は3。
-                    //borderWidth: 3,
-                    //グラフを塗りつぶすかどうか。初期値はtrue。falseにすると枠線だけのグラフになります。
-                    fill: true,
-                    //複数のグラフを重ねて描画する際の重なりを設定する。z-indexみたいなもの。初期値は0。
-                    order: 40,
-                    //0より大きい値にすると「ベジェ曲線」という数式で曲線のグラフになります。初期値は0。
-                    lineTension: 0
-                },
-            {
-                    //グラフのデータ(上から時計回り)
-                    data: [
-                      69, 70, 71, 70, 67, 70, 69, 72, 56
-                    ],
-                    //グラフ全体のラベル
-                    label: '不健康',
-                    //背景色
-                    backgroundColor: "rgba(255, 255, 0, 0.1)",
-                    //線の終端を四角にするか丸めるかの設定。デフォルトは四角(butt)。
-                    //borderCapStyle: "butt",
-                    //線の色
-                    borderColor: "rgba(255, 255, 0, 0.1)",
-                    //線を破線にする
-                    //borderDash: [],
-                    //破線のオフセット(基準点からの距離)
-                    //borderDashOffset: 0.0,
-                    //線と線が交わる箇所のスタイル。初期値は'miter'
-                    //borderJoinStyle: 'miter',
-                    //線の幅。ピクセル単位で指定。初期値は3。
-                    //borderWidth: 3,
-                    //グラフを塗りつぶすかどうか。初期値はtrue。falseにすると枠線だけのグラフになります。
-                    fill: true,
-                    //複数のグラフを重ねて描画する際の重なりを設定する。z-indexみたいなもの。初期値は0。
-                    order: 30,
-                    //0より大きい値にすると「ベジェ曲線」という数式で曲線のグラフになります。初期値は0。
-                    lineTension: 0
-                },
-                {
-                    //グラフのデータ(上から時計回り)
-                    data: [
-                      51, 53, 57, 53, 52, 53, 53, 61, 43
-                    ],
-                    //グラフ全体のラベル
-                    label: 'やや不健康',
-                    //背景色
-                    backgroundColor: "rgba(0, 255, 0, 0.2)",
-                    //線の終端を四角にするか丸めるかの設定。デフォルトは四角(butt)。
-                    //borderCapStyle: "butt",
-                    //線の色
-                    borderColor: "rgba(0, 255, 0, 0.2)",
-                    //線を破線にする
-                    //borderDash: [],
-                    //破線のオフセット(基準点からの距離)
-                    //borderDashOffset: 0.0,
-                    //線と線が交わる箇所のスタイル。初期値は'miter'
-                    //borderJoinStyle: 'miter',
-                    //線の幅。ピクセル単位で指定。初期値は3。
-                    borderWidth: 3,
-                    //グラフを塗りつぶすかどうか。初期値はtrue。falseにすると枠線だけのグラフになります。
-                    fill: true,
-                    //複数のグラフを重ねて描画する際の重なりを設定する。z-indexみたいなもの。初期値は0。
-                    order: 20,
-                    //0より大きい値にすると「ベジェ曲線」という数式で曲線のグラフになります。初期値は0。
-                    lineTension: 0
-                },
-                {
-                    //グラフのデータ(上から時計回り)
-                    data: [
-                      36, 37, 38, 37, 35, 37, 36, 39, 29
-                    ],
-                    //グラフ全体のラベル
-                    label: 'ふつう',
-                    //背景色
-                    backgroundColor: "rgba(0, 0, 255, 0.2)",
-                    //線の終端を四角にするか丸めるかの設定。デフォルトは四角(butt)。
-                    //borderCapStyle: "butt",
-                    //線の色
-                    borderColor: "rgba(0, 0, 255, 0.2)",
-                    //線を破線にする
-                    //borderDash: [],
-                    //破線のオフセット(基準点からの距離)
-                    //borderDashOffset: 0.0,
-                    //線と線が交わる箇所のスタイル。初期値は'miter'
-                    //borderJoinStyle: 'miter',
-                    //線の幅。ピクセル単位で指定。初期値は3。
-                    borderWidth: 3,
-                    //グラフを塗りつぶすかどうか。初期値はtrue。falseにすると枠線だけのグラフになります。
-                    fill: true,
-                    //複数のグラフを重ねて描画する際の重なりを設定する。z-indexみたいなもの。初期値は0。
-                    order: 10,
-                    //0より大きい値にすると「ベジェ曲線」という数式で曲線のグラフになります。初期値は0。
-                    lineTension: 0
-                },
-                {
-                    //グラフのデータ(上から時計回り)
-                    data: [
-                      Math.round(indicator[1] / scores[1]['max'] * 100),
-                      Math.round(indicator[2] / scores[2]['max'] * 100),
-                      Math.round(indicator[3] / scores[3]['max'] * 100),
-                      Math.round(indicator[4] / scores[4]['max'] * 100),
-                      Math.round(indicator[5] / scores[5]['max'] * 100),
-                      Math.round(indicator[6] / scores[6]['max'] * 100),
-                      Math.round(indicator[7] / scores[7]['max'] * 100),
-                      Math.round(indicator[8] / scores[8]['max'] * 100),
-                      Math.round(indicator[9] / scores[9]['max'] * 100)
-                    ],
-                    //グラフ全体のラベル
-                    label: "回答",
-                    //背景色
-                    backgroundColor: "rgba(0, 0, 0, 1)",
-                    //線の終端を四角にするか丸めるかの設定。デフォルトは四角(butt)。
-                    borderCapStyle: "butt",
-                    //線の色
-                    borderColor: "rgba(0, 0, 0, 1)",
-                    //線を破線にする
-                    //borderDash: [],
-                    //破線のオフセット(基準点からの距離)
-                    //borderDashOffset: 0.0,
-                    //線と線が交わる箇所のスタイル。初期値は'miter'
-                    //borderJoinStyle: 'miter',
-                    //線の幅。ピクセル単位で指定。初期値は3。
-                    borderWidth: 3,
-                    //グラフを塗りつぶすかどうか。初期値はtrue。falseにすると枠線だけのグラフになります。
-                    fill: false,
-                    //複数のグラフを重ねて描画する際の重なりを設定する。z-indexみたいなもの。初期値は0。
-                    order: 0,
-                    //0より大きい値にすると「ベジェ曲線」という数式で曲線のグラフになります。初期値は0。
-                    lineTension: 0
-                }
-            ]
-        },
-        options: {
-        scales: {
-          r: {
-            //グラフの最小値・最大値
-            min: 0,
-            max: 100,
-            //背景色
-            backgroundColor: 'white',
-            //グリッドライン
-            grid: {
-              color: 'grey',
-            },
-            //アングルライン
-            angleLines: {
-              color: 'green',
-            },
-            //各項目のラベル
-            pointLabels: {
-              color: 'black',
-            }
-          }
-        }
-      }
-    });
-</script>
+<script src="./js/result.js"></script>
