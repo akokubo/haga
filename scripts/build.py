@@ -12,7 +12,7 @@ progress_max = df['進捗'].max()
 for index, row in df.iterrows():
   record = dict()
   if row['進捗'] > 1:
-    record['progress'] = round(row['進捗'] / progress_max * 100)
+    record['progress'] = round(row['進捗'] / progress_max * 100, 1)
   else:
     record['progress'] = None
 
