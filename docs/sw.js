@@ -8,7 +8,6 @@ var filesToCache = [
   'js/bootstrap.bundle.min.js',
   'js/bootstrap.bundle.min.js.map',
   'js/chart.js',
-  'js/jquery-3.7.0.min.js',
   'js/number.js',
   'js/radio.js',
   'js/result.js',
@@ -16,6 +15,8 @@ var filesToCache = [
   'js/text.js',
   'android-chrome-256×256.png',
   'apple-touch-icon.png',
+  'icon-512x512.png',
+  'icon-192x192.png',
   'favicon.ico',
   'age.html',
   'favorite.html',
@@ -150,22 +151,18 @@ var filesToCache = [
 ];
 
 self.addEventListener('install', function(event) {
-  console.log('ServiceWorker installing');
   event.waitUntil(
     caches.open(cacheName).then(function(cache) {
-      console.log('Service Worker caching app shell');
       return cache.addAll(filesToCache);
     })
   );
 });
 
 self.addEventListener('activate', function(event) {
-  console.log('Service Worker activating');
   event.waitUntil(
     caches.keys().then(function(keyList) {
       return Promise.all(keyList.map(function(key) {
         if (key !== cacheName) {
-          console.log('Service Worker removing old cache', key);
           return caches.delete(key);
         }
       }));
@@ -175,7 +172,6 @@ self.addEventListener('activate', function(event) {
 });
 
 self.addEventListener('fetch', function(event) {
-  console.log('Service Worker fetching ', event.request.url);
   event.respondWith(
     caches.match(event.request).then(function(response) {
       return response || fetch(event.request);
