@@ -13,7 +13,7 @@ var filesToCache = [
   'js/result.js',
   'js/session-storage-clear.js',
   'js/text.js',
-  'android-chrome-256×256.png',
+  'android-chrome-256x256.png',
   'apple-touch-icon.png',
   'icon-512x512.png',
   'icon-192x192.png',
